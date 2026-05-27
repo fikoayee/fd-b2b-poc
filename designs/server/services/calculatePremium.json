@@ -1,0 +1,692 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "type": "tab",
+        "createdDate": "2026-05-27T14:35:47.016Z",
+        "label": "calculatePremium",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "calculatePremium",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_8C3PVDdOEFnocPdg",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/calculatePremium",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "vehicle_type",
+                    "desc": "vehicle type",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_uTjvno41dOooqzUk",
+                    "valid": true
+                },
+                {
+                    "key": "add_ons",
+                    "desc": "add ons",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_E7LouBgpEPQiAFdc",
+                    "valid": true
+                },
+                {
+                    "key": "plan_code",
+                    "desc": "plan code",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_qNp0pDsVX463TIyO",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 220,
+        "wires": [
+            [
+                "sd_PFVIbsdBlpCwmIMD"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "calculatePremium",
+        "functionName": "sd_8C3PVDdOEFnocPdg"
+    },
+    {
+        "id": "sd_4yf45jTMHmzBq4Db",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "output",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.output",
+            "send": "bh.local.output"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_4yf45jTMHmzBq4Db",
+        "category": "HTTP",
+        "x": 1485,
+        "y": 300,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_Hcx7uKHqhcaUGwF9",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "fetchBasePremium",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "\"https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/aa6b3e75-a1c1-404e-b8ca-1569703836d9/063df705-39eb-4d74-9b88-10c1b0c4522c\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/aa6b3e75-a1c1-404e-b8ca-1569703836d9/063df705-39eb-4d74-9b88-10c1b0c4522c"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "bh.local.basePremiumBody",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "basePremiumBody"
+        },
+        "resultMapping": "bh.local.basePremiumResponse",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "basePremiumResponse"
+        },
+        "headers": {
+            "Content-Type": "application/json",
+            "token": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+        },
+        "headersObj": [
+            {
+                "key": "Content-Type",
+                "defaultValue": "application/json"
+            },
+            {
+                "key": "token",
+                "defaultValue": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+            }
+        ],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "authType": "",
+        "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
+        "useAuthType": "",
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookies": [],
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "fetchBasePremium",
+        "category": "HTTP",
+        "x": 305,
+        "y": 220,
+        "wires": [
+            [
+                "sd_uffUBgDkYg3HcoCK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_PFVIbsdBlpCwmIMD",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "prepareBasePremiumBody",
+        "script": "bh.local.basePremiumBody = {\n  pageNumber: 0,\n  pageSize: 1,\n  multiplicity: \"multiple\",\n  filter: { vehicle_type: bh.input.body.vehicle_type },\n  select: [\"base_premium\"]\n};",
+        "functionName": "prepareBasePremiumBody",
+        "category": "Function",
+        "x": 185,
+        "y": 300,
+        "wires": [
+            [
+                "sd_Hcx7uKHqhcaUGwF9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_uffUBgDkYg3HcoCK",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "unpackBasePremium",
+        "script": "const records = bh.local.basePremiumResponse?.payload?.records || [];\nbh.local.base_premium = records[0]?.base_premium || 0;",
+        "functionName": "unpackBasePremium",
+        "category": "Function",
+        "x": 405,
+        "y": 300,
+        "wires": [
+            [
+                "sd_uYGp4azSmKusuGe4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_uYGp4azSmKusuGe4",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "prepareAddOnPricingBody",
+        "script": "bh.local.addOnPricingBody = {\n  pageNumber: 0,\n  pageSize: 50,\n  multiplicity: \"multiple\",\n  filter: {},\n  select: [\"add_on_code\", \"price\"]\n};",
+        "functionName": "prepareAddOnPricingBody",
+        "category": "Function",
+        "x": 505,
+        "y": 220,
+        "wires": [
+            [
+                "sd_Q6WUhtUNMo5vICAj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_Q6WUhtUNMo5vICAj",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "fetchAddOnPricing",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "\"https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/ff52ff1c-fc47-4134-b29f-2a499d257aa9/656569c1-9ea4-4a8a-a27b-6b7bcfc33ff0\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/ff52ff1c-fc47-4134-b29f-2a499d257aa9/656569c1-9ea4-4a8a-a27b-6b7bcfc33ff0"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "bh.local.addOnPricingBody",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "addOnPricingBody"
+        },
+        "resultMapping": "bh.local.addOnPricingResponse",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "addOnPricingResponse"
+        },
+        "headers": {
+            "Content-Type": "application/json",
+            "token": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+        },
+        "headersObj": [
+            {
+                "key": "Content-Type",
+                "defaultValue": "application/json"
+            },
+            {
+                "key": "token",
+                "defaultValue": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+            }
+        ],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "authType": "",
+        "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
+        "useAuthType": "",
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookies": [],
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "fetchAddOnPricing",
+        "category": "HTTP",
+        "x": 605,
+        "y": 300,
+        "wires": [
+            [
+                "sd_aMovfFo3pEEVVfJR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_aMovfFo3pEEVVfJR",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "calculateAddOnTotal",
+        "script": "const allAddOns = bh.local.addOnPricingResponse?.payload?.records || [];\nconst selectedCodes = bh.input.body.add_ons || [];\n\nlet total = 0;\nfor (const code of selectedCodes) {\n  const found = allAddOns.find(a => a.add_on_code === code);\n  if (found) {\n    total += Number(found.price) || 0;\n  }\n}\n\nbh.local.addon_total = total;",
+        "functionName": "calculateAddOnTotal",
+        "category": "Function",
+        "x": 725,
+        "y": 220,
+        "wires": [
+            [
+                "sd_0eHQPLoS7T0ZjbkE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_0eHQPLoS7T0ZjbkE",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "preparePlanMultiplierBody",
+        "script": "bh.local.planMultiplierBody = {\n  pageNumber: 0,\n  pageSize: 1,\n  multiplicity: \"multiple\",\n  filter: { plan_code: bh.input.body.plan_code },\n  select: [\"plan_multiplier\"]\n};",
+        "functionName": "preparePlanMultiplierBody",
+        "category": "Function",
+        "x": 860,
+        "y": 300,
+        "wires": [
+            [
+                "sd_HBApcNrFhYH3BtTr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_HBApcNrFhYH3BtTr",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "fetchPlanMultiplier",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "\"https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/adffdff3-0d17-47a1-908a-cfa363eef690/b454cc5f-32c9-4c65-b503-cfe07f1ee1af\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/adffdff3-0d17-47a1-908a-cfa363eef690/b454cc5f-32c9-4c65-b503-cfe07f1ee1af"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "bh.local.planMultiplierBody",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "planMultiplierBody"
+        },
+        "resultMapping": "bh.local.planMultiplierResponse",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "planMultiplierResponse"
+        },
+        "headers": {
+            "Content-Type": "application/json",
+            "token": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+        },
+        "headersObj": [
+            {
+                "key": "Content-Type",
+                "defaultValue": "application/json"
+            },
+            {
+                "key": "token",
+                "defaultValue": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+            }
+        ],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "authType": "",
+        "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
+        "useAuthType": "",
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookies": [],
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "fetchPlanMultiplier",
+        "category": "HTTP",
+        "x": 980,
+        "y": 240,
+        "wires": [
+            [
+                "sd_X9EOmGh5xjYWcFZS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_X9EOmGh5xjYWcFZS",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "unpackPlanMultiplier",
+        "script": "const records = bh.local.planMultiplierResponse?.payload?.records || [];\nbh.local.plan_multiplier = Number(records[0]?.plan_multiplier) || 1;",
+        "functionName": "unpackPlanMultiplier",
+        "category": "Function",
+        "x": 1085,
+        "y": 300,
+        "wires": [
+            [
+                "sd_RTM3mczUMtQ5HjVO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_RTM3mczUMtQ5HjVO",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "prepareWF1Body",
+        "script": "bh.local.wf1Body = {\n  workflowId: \"d967c6f5-f744-4321-9cdc-b5df97cd994d\",\n  version: \"1.0.1\",\n  inputObj: {\n    base_premium: bh.local.base_premium,\n    addon_total: bh.local.addon_total,\n    plan_multiplier: bh.local.plan_multiplier\n  }\n};",
+        "functionName": "prepareWf1Body",
+        "category": "Function",
+        "x": 1185,
+        "y": 240,
+        "wires": [
+            [
+                "sd_rZggXsAmk0tr21Ks"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_rZggXsAmk0tr21Ks",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "callReelsWF1",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "\"https://reels-pt.neutrinos-apps.com/integration/api/runtime/sync\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "https://reels-pt.neutrinos-apps.com/integration/api/runtime/sync"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "bh.local.wf1Body",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "wf1Body"
+        },
+        "resultMapping": "bh.local.wf1Response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "wf1Response"
+        },
+        "headers": {
+            "Content-Type": "application/json",
+            "token": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+        },
+        "headersObj": [
+            {
+                "key": "Content-Type",
+                "defaultValue": "application/json"
+            },
+            {
+                "key": "token",
+                "defaultValue": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+            }
+        ],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "authType": "",
+        "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
+        "useAuthType": "",
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookies": [],
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "callReelsWf1",
+        "category": "HTTP",
+        "x": 1285,
+        "y": 300,
+        "wires": [
+            [
+                "sd_Hubm4rMgf71E4fwT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    },
+    {
+        "id": "sd_Hubm4rMgf71E4fwT",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_DtumWYLABtkEIUe6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "unpackResponse",
+        "script": "const result = bh.local.wf1Response?.payload?.result || {};\n\nbh.local.output = {\n  success: true,\n  base_premium: bh.local.base_premium,\n  addon_total: bh.local.addon_total,\n  plan_multiplier: bh.local.plan_multiplier,\n  final_premium: Number(result.final_premium),\n  requires_manual_approval: result.requires_manual_approval === true || result.requires_manual_approval === \"true\"\n};",
+        "functionName": "unpackResponse",
+        "category": "Function",
+        "x": 1400,
+        "y": 300,
+        "wires": [
+            [
+                "sd_4yf45jTMHmzBq4Db"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculatePremium",
+        "generated": true
+    }
+]

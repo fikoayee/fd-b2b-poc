@@ -1,0 +1,34 @@
+{
+    "/calculatePremium": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "vehicle_type",
+                    "description": "vehicle type",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "add_ons",
+                    "description": "add ons",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "plan_code",
+                    "description": "plan code",
+                    "required": true
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "calculatePremium"
+            ]
+        }
+    }
+}

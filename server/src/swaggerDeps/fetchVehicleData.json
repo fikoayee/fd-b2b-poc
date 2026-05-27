@@ -1,0 +1,22 @@
+{
+    "/fetchVehicleData": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "model",
+                    "description": "model name",
+                    "required": true
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "fetchVehicleData"
+            ]
+        }
+    }
+}

@@ -1,0 +1,277 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_rG93UyE2FrPZBb2Z",
+        "type": "tab",
+        "createdDate": "2026-05-27T14:36:57.102Z",
+        "label": "fetchVehicleData",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "fetchVehicleData",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_K5npQUvhTiZuu4Mx",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_rG93UyE2FrPZBb2Z",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "prepare body",
+        "script": "const model = bh.input.body.model;\n\nbh.local.reelsBody = {\n  pageNumber: 0,\n  pageSize: 10,\n  multiplicity: \"multiple\",\n  filter: {\n    model: model\n  },\n  select: [\"is_high_end\", \"vehicle_type\", \"model\"]\n};",
+        "functionName": "prepareBody",
+        "category": "Function",
+        "x": 145,
+        "y": 240,
+        "wires": [
+            [
+                "sd_5RUBu8IZcg3AAbRv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "fetchVehicleData",
+        "generated": true
+    },
+    {
+        "id": "sd_KOUfHQ8Gr55u6SYl",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_rG93UyE2FrPZBb2Z",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "unpack",
+        "script": "const records = bh.local.response?.payload?.records || [];\nconst vehicle = records[0] || null;\n\nif (vehicle) {\n  bh.local.output = {\n    success: true,\n    vehicle: {\n      vehicle_type: vehicle.vehicle_type,\n      model: vehicle.model,\n      is_high_end: vehicle.is_high_end\n    }\n  };\n} else {\n  bh.local.output = {\n    success: false,\n    error: \"Vehicle not found\"\n  };\n}",
+        "functionName": "unpack",
+        "category": "Function",
+        "x": 345,
+        "y": 240,
+        "wires": [
+            [
+                "sd_nTvte6u9b1DIZAMi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "fetchVehicleData",
+        "generated": true
+    },
+    {
+        "id": "sd_5RUBu8IZcg3AAbRv",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_rG93UyE2FrPZBb2Z",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "callReels",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "\"https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/0ca3d917-08b1-49f4-85f1-481adc280b06/153d246f-a130-41b7-b952-a3b325779fb9\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "https://reels-pt.neutrinos-apps.com/integration/api/records/filter/72b58c39-817f-4204-95dc-4f5eec8fd929/0ca3d917-08b1-49f4-85f1-481adc280b06/153d246f-a130-41b7-b952-a3b325779fb9"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "bh.local.reelsBody",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "reelsBody"
+        },
+        "resultMapping": "bh.local.response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "response"
+        },
+        "headers": {
+            "Content-Type": "application/json",
+            "token": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+        },
+        "headersObj": [
+            {
+                "key": "Content-Type",
+                "defaultValue": "application/json"
+            },
+            {
+                "key": "token",
+                "defaultValue": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+            }
+        ],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "authType": "",
+        "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
+        "useAuthType": "",
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookies": [],
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "callReels",
+        "category": "HTTP",
+        "x": 245,
+        "y": 240,
+        "wires": [
+            [
+                "sd_KOUfHQ8Gr55u6SYl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "fetchVehicleData",
+        "generated": true
+    },
+    {
+        "id": "sd_FOYyJHCtkBZdXO36",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_rG93UyE2FrPZBb2Z",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "httpIn",
+        "path": "/fetchVehicleData",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "model",
+                    "desc": "model name",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_5lLCgRyD7xn3PYZS",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 240,
+        "wires": [
+            [
+                "sd_K5npQUvhTiZuu4Mx"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "fetchVehicleData",
+        "functionName": "sd_FOYyJHCtkBZdXO36"
+    },
+    {
+        "id": "sd_nTvte6u9b1DIZAMi",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_rG93UyE2FrPZBb2Z",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "httpOut",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "responseBody": {
+            "type": "bh.local",
+            "value": "output",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.output",
+            "send": "bh.local.output"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "rowId": "sd_X0worcfurWOTE4wp",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "httpOut",
+        "category": "HTTP",
+        "x": 445,
+        "y": 240,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "fetchVehicleData",
+        "generated": true
+    }
+]
