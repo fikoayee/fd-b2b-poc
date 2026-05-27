@@ -13,7 +13,10 @@
             "SSD_DEFAULT_PORT": "server",
             "webAppMountpoint": "both",
             "CLOCK_TOLERANCE": "server",
-            "NGFORAGE_MOBILE_DRIVER": "client"
+            "NGFORAGE_MOBILE_DRIVER": "client",
+            "postgresUsername": "server",
+            "postgresPassword": "server",
+            "db_host": "server"
         }
     },
     "dev": {
@@ -30,7 +33,10 @@
             "SSD_DEFAULT_PORT": "8081",
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
-            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB"
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "postgresUsername": "postgres.owmusukowtsgbvtciqfp",
+            "postgresPassword": "Farainjaturi37!",
+            "db_host": "aws-0-eu-west-1.pooler.supabase.com"
         }
     },
     "prod": {
@@ -47,7 +53,10 @@
             "SSD_DEFAULT_PORT": "8081",
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
-            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB"
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "postgresUsername": "postgres.owmusukowtsgbvtciqfp",
+            "postgresPassword": "Farainjaturi37!",
+            "db_host": "aws-0-eu-west-1.pooler.supabase.com"
         }
     }
 }
