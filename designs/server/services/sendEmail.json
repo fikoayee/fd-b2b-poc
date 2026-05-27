@@ -1,0 +1,284 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_cPMGSeszgttf83ov",
+        "type": "tab",
+        "createdDate": "2026-05-27T14:45:49.063Z",
+        "label": "sendEmail",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "sendEmail",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_Cfgm1ubQybaKnV0i",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_cPMGSeszgttf83ov",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/sendEmail",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "to",
+                    "desc": "to",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_6jBKFfv0gmOjS8ni",
+                    "valid": true
+                },
+                {
+                    "key": "subject",
+                    "desc": "subject",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_rlnTiAU8kDFw3unY",
+                    "valid": true
+                },
+                {
+                    "key": "html_body",
+                    "desc": "html body",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_kHJihAD2TQ5TiTo3",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 85,
+        "y": 300,
+        "wires": [
+            [
+                "sd_17art4PVaJN4amUC"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "sendEmail",
+        "functionName": "sd_Cfgm1ubQybaKnV0i"
+    },
+    {
+        "id": "sd_vHuAygG9eniAms8c",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_cPMGSeszgttf83ov",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "output",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.output",
+            "send": "bh.local.output"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_vHuAygG9eniAms8c",
+        "category": "HTTP",
+        "x": 670,
+        "y": 300,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sendEmail",
+        "generated": true
+    },
+    {
+        "id": "sd_17art4PVaJN4amUC",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_cPMGSeszgttf83ov",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.resendBody = {\n  from: \"Motor POC <onboarding@resend.dev>\",\n  to: [bh.input.body.to],\n  subject: bh.input.body.subject,\n  html: bh.input.body.html_body\n};",
+        "functionName": "sd_17art4PVaJN4amUC",
+        "category": "Function",
+        "x": 205,
+        "y": 300,
+        "wires": [
+            [
+                "sd_GgNYo2xxjz5vgtYO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sendEmail",
+        "generated": true
+    },
+    {
+        "id": "sd_GgNYo2xxjz5vgtYO",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_cPMGSeszgttf83ov",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "\"https://api.resend.com/emails\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "https://api.resend.com/emails"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "bh.local.resendBody",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "resendBody"
+        },
+        "resultMapping": "bh.local.response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "response"
+        },
+        "headers": {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer re_He1PfHq8_MjEyRtnetLWDjGnKuFyLS3uL"
+        },
+        "headersObj": [
+            {
+                "key": "Content-Type",
+                "defaultValue": "application/json"
+            },
+            {
+                "key": "Authorization",
+                "defaultValue": "Bearer re_He1PfHq8_MjEyRtnetLWDjGnKuFyLS3uL"
+            }
+        ],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "authType": "",
+        "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
+        "useAuthType": "",
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookies": [],
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "sd_GgNYo2xxjz5vgtYO",
+        "category": "HTTP",
+        "x": 345,
+        "y": 300,
+        "wires": [
+            [
+                "sd_oEuo7UG81N2wgTQv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sendEmail",
+        "generated": true
+    },
+    {
+        "id": "sd_oEuo7UG81N2wgTQv",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_cPMGSeszgttf83ov",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const payload = bh.local.response?.payload || {};\n\nif (payload.id) {\n  bh.local.output = {\n    success: true,\n    email_id: payload.id,\n    message: \"Email sent successfully\"\n  };\n} else {\n  bh.local.output = {\n    success: false,\n    error: payload.message || \"Failed to send email\",\n    debug: bh.local.response\n  };\n}",
+        "functionName": "sd_oEuo7UG81N2wgTQv",
+        "category": "Function",
+        "x": 505,
+        "y": 300,
+        "wires": [
+            [
+                "sd_vHuAygG9eniAms8c"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "sendEmail",
+        "generated": true
+    }
+]

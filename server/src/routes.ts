@@ -1,4 +1,6 @@
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-sendEmail-SSD_SERVICE_ID_sd_cPMGSeszgttf83ov
+import { sendEmail as SSD_SERVICE_ID_sd_cPMGSeszgttf83ov } from './sd-services/sendEmail';
 //CORE_REFERENCE_IMPORT-savePolicy-SSD_SERVICE_ID_sd_1UFZoqZU8HOsrpor
 import { savePolicy as SSD_SERVICE_ID_sd_1UFZoqZU8HOsrpor } from './sd-services/savePolicy';
 //CORE_REFERENCE_IMPORT-fetchVehicleData-SSD_SERVICE_ID_sd_rG93UyE2FrPZBb2Z
@@ -10,6 +12,8 @@ import { applyDiscount as SSD_SERVICE_ID_sd_FsL050KH3xOHWWGn } from './sd-servic
 
 export const UserRoutes = [
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY
+//CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-sendEmail-SSD_SERVICE_ID_sd_cPMGSeszgttf83ov
+SSD_SERVICE_ID_sd_cPMGSeszgttf83ov,
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-savePolicy-SSD_SERVICE_ID_sd_1UFZoqZU8HOsrpor
 SSD_SERVICE_ID_sd_1UFZoqZU8HOsrpor,
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-fetchVehicleData-SSD_SERVICE_ID_sd_rG93UyE2FrPZBb2Z

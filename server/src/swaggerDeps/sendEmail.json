@@ -1,0 +1,34 @@
+{
+    "/sendEmail": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "to",
+                    "description": "to",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "subject",
+                    "description": "subject",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "html_body",
+                    "description": "html body",
+                    "required": true
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "sendEmail"
+            ]
+        }
+    }
+}
