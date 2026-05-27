@@ -1,0 +1,28 @@
+{
+    "/applyDiscount": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "is_high_end",
+                    "description": "is high end",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "final_premium",
+                    "description": "final premium",
+                    "required": true
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "applyDiscount"
+            ]
+        }
+    }
+}

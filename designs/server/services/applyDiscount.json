@@ -1,0 +1,268 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_FsL050KH3xOHWWGn",
+        "type": "tab",
+        "createdDate": "2026-05-27T14:15:12.470Z",
+        "label": "applyDiscount",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "applyDiscount",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_A025B27PPvemayd0",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_FsL050KH3xOHWWGn",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/applyDiscount",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "is_high_end",
+                    "desc": "is high end",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_uXRDasjheC6BkZ1p",
+                    "valid": true
+                },
+                {
+                    "key": "final_premium",
+                    "desc": "final premium",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_sA6S5I8j2VAfM4kv",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 105,
+        "y": 260,
+        "wires": [
+            [
+                "sd_2obRyVtPe5SMEOsV"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "applyDiscount",
+        "functionName": "sd_A025B27PPvemayd0"
+    },
+    {
+        "id": "sd_BOt6aII9KnODXSVt",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_FsL050KH3xOHWWGn",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "output",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.output",
+            "send": "bh.local.output"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_BOt6aII9KnODXSVt",
+        "category": "HTTP",
+        "x": 845,
+        "y": 260,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applyDiscount",
+        "generated": true
+    },
+    {
+        "id": "sd_71ICpKFxuZHSnjP5",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_FsL050KH3xOHWWGn",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "\"https://reels-pt.neutrinos-apps.com/integration/api/runtime/sync\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "https://reels-pt.neutrinos-apps.com/integration/api/runtime/sync"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.local.reelsBody",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "reelsBody"
+        },
+        "resultMapping": "bh.local.response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "response"
+        },
+        "headers": {
+            "Content-Type": "application/json",
+            "token": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+        },
+        "headersObj": [
+            {
+                "key": "Content-Type",
+                "defaultValue": "application/json"
+            },
+            {
+                "key": "token",
+                "defaultValue": "e803e1c6-f249-4c53-9df9-7ee9d4c598c1.4ff5e9318f47c28660472399a8d6f219f95c0bc0b007a785eae6b63913ad31d4"
+            }
+        ],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "useAuthTypeMappingObj": {},
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "sd_71ICpKFxuZHSnjP5",
+        "category": "HTTP",
+        "x": 485,
+        "y": 260,
+        "wires": [
+            [
+                "sd_Y9ht4BSemI0Gek1m"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applyDiscount",
+        "generated": true
+    },
+    {
+        "id": "sd_2obRyVtPe5SMEOsV",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_FsL050KH3xOHWWGn",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.reelsBody = {\n  workflowId: \"47adebae-fe49-4ffb-8bd7-ae4d067a401f\",\n  version: \"1.0.1\",\n  inputObj: {\n    is_high_end: bh.input.body.is_high_end,\n    final_premium: bh.input.body.final_premium\n  }\n};",
+        "functionName": "sd_2obRyVtPe5SMEOsV",
+        "category": "Function",
+        "x": 285,
+        "y": 260,
+        "wires": [
+            [
+                "sd_71ICpKFxuZHSnjP5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applyDiscount",
+        "generated": true
+    },
+    {
+        "id": "sd_Y9ht4BSemI0Gek1m",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_FsL050KH3xOHWWGn",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const result = bh.local.response?.payload?.result || {};\n\nbh.local.output = {\n  success: true,\n  discount_pct: Number(result.discount_pct) || 0,\n  discounted_premium: result.discounted_premium\n};",
+        "functionName": "sd_Y9ht4BSemI0Gek1m",
+        "category": "Function",
+        "x": 665,
+        "y": 260,
+        "wires": [
+            [
+                "sd_BOt6aII9KnODXSVt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applyDiscount",
+        "generated": true
+    }
+]

@@ -1,0 +1,13 @@
+{
+    "displayName": "fd-test-deploy",
+    "appName": "fd-test-deploy",
+    "description": "deploy test",
+    "lastModified": "2026-05-27T14:14:46.133Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2026-05-27T14:14:43.953Z",
+    "analyticsId": "0bc4a545-5f57-d15b-f387-2e221df6ff76",
+    "createdStudioVersion": "9.3.0"
+}
