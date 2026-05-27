@@ -1,0 +1,331 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_1UFZoqZU8HOsrpor",
+        "type": "tab",
+        "createdDate": "2026-05-27T14:39:24.124Z",
+        "label": "savePolicy",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "savePolicy",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_uZlVTgLV3CHHAnOm",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_1UFZoqZU8HOsrpor",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/savePolicy",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "customer_name",
+                    "desc": "customer name",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_FBmvGKrC4xcd3ggU",
+                    "valid": true
+                },
+                {
+                    "key": "customer_email",
+                    "desc": "customer email",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_4d6Of8EnBivO6yjA",
+                    "valid": true
+                },
+                {
+                    "key": "customer_phone",
+                    "desc": "customer phone",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_zTG9RQJs1tvxXC4m",
+                    "valid": true
+                },
+                {
+                    "key": "vehicle_type",
+                    "desc": "vehicle type",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_ucMCZ1zTxdLue7xD",
+                    "valid": true
+                },
+                {
+                    "key": "vehicle_model",
+                    "desc": "vehicle model",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_if8SpxyZ5thLQdao",
+                    "valid": true
+                },
+                {
+                    "key": "is_high_end",
+                    "desc": "is high end",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_CNPlhI7oNU8tppe2",
+                    "valid": true
+                },
+                {
+                    "key": "plan_code",
+                    "desc": "plan code",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_bRIPbX8YMZ7W0qiN",
+                    "valid": true
+                },
+                {
+                    "key": "base_premium",
+                    "desc": "base premium",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_iJVZq9gLVdqF4l8R",
+                    "valid": true
+                },
+                {
+                    "key": "addon_total",
+                    "desc": "addon total",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_1Tt5cQiEQVqiqSbC",
+                    "valid": true
+                },
+                {
+                    "key": "final_premium",
+                    "desc": "final premium",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_3rCNnooOc65TA1k9",
+                    "valid": true
+                },
+                {
+                    "key": "discount_pct",
+                    "desc": "discount pct",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_aVGXJHiNzDhOvkEh",
+                    "valid": true
+                },
+                {
+                    "key": "discounted_premium",
+                    "desc": "discounted premium",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_w7S9ySxKNY5aCEfB",
+                    "valid": true
+                },
+                {
+                    "key": "requires_manual_approval",
+                    "desc": "requires manual approval",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_jKnmTaC0iKWtB4My",
+                    "valid": true
+                },
+                {
+                    "key": "underwriter_action",
+                    "desc": "underwriter action",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_87foksN3ch73rCmx",
+                    "valid": true
+                },
+                {
+                    "key": "issuer_action",
+                    "desc": "issuer action",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_wtUdhucrBOHbjKvw",
+                    "valid": true
+                },
+                {
+                    "key": "status",
+                    "desc": "status",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_f9V2AByK1urjo4fn",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 165,
+        "y": 340,
+        "wires": [
+            [
+                "sd_mzjrpFRhUCaVtksS"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "savePolicy",
+        "functionName": "sd_uZlVTgLV3CHHAnOm"
+    },
+    {
+        "id": "sd_fH0XmNQUZ4FgvFfk",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_1UFZoqZU8HOsrpor",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "output",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.output",
+            "send": "bh.local.output"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_fH0XmNQUZ4FgvFfk",
+        "category": "HTTP",
+        "x": 545,
+        "y": 340,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "savePolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_mzjrpFRhUCaVtksS",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_1UFZoqZU8HOsrpor",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const v = bh.input.body;\n\nconst escape = (s) => {\n  if (s === null || s === undefined) return 'NULL';\n  if (typeof s === 'boolean') return s ? 'TRUE' : 'FALSE';\n  if (typeof s === 'number') return String(s);\n  return `'${String(s).replace(/'/g, \"''\")}'`;\n};\n\nbh.local.queryParams = `INSERT INTO policies (\n  customer_name, customer_email, customer_phone,\n  vehicle_type, vehicle_model, is_high_end,\n  plan_code,\n  base_premium, addon_total, final_premium,\n  discount_pct, discounted_premium,\n  requires_manual_approval, underwriter_action, issuer_action,\n  status\n) VALUES (\n  ${escape(v.customer_name)},\n  ${escape(v.customer_email)},\n  ${escape(v.customer_phone || null)},\n  ${escape(v.vehicle_type)},\n  ${escape(v.vehicle_model)},\n  ${escape(v.is_high_end ?? null)},\n  ${escape(v.plan_code)},\n  ${escape(v.base_premium ?? null)},\n  ${escape(v.addon_total ?? null)},\n  ${escape(v.final_premium ?? null)},\n  ${escape(v.discount_pct ?? null)},\n  ${escape(v.discounted_premium ?? null)},\n  ${escape(v.requires_manual_approval ?? null)},\n  ${escape(v.underwriter_action || null)},\n  ${escape(v.issuer_action || null)},\n  ${escape(v.status)}\n) RETURNING id, created_at`;",
+        "functionName": "sd_mzjrpFRhUCaVtksS",
+        "category": "Function",
+        "x": 280,
+        "y": 340,
+        "wires": [
+            [
+                "sd_wcgMAKJdeMsHsMSR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "savePolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_4VEepQ7V5CoIY2pS",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_1UFZoqZU8HOsrpor",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const row = bh.local.dbResult?.[0] \n  || bh.local.dbResult?.rows?.[0] \n  || null;\n\nif (row) {\n  bh.local.output = {\n    success: true,\n    policy_id: row.id,\n    created_at: row.created_at\n  };\n} else {\n  bh.local.output = {\n    success: false,\n    error: \"Failed to save policy\",\n    debug: bh.local.dbResult\n  };\n}",
+        "functionName": "sd_4VEepQ7V5CoIY2pS",
+        "category": "Function",
+        "x": 465,
+        "y": 340,
+        "wires": [
+            [
+                "sd_fH0XmNQUZ4FgvFfk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "savePolicy",
+        "generated": true
+    },
+    {
+        "id": "sd_wcgMAKJdeMsHsMSR",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_1UFZoqZU8HOsrpor",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_Nf3xcwwW2teYXxWB",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "dbResult"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "queryParams"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "postgres",
+        "functionName": "sd_wcgMAKJdeMsHsMSR",
+        "category": "Storage",
+        "x": 365,
+        "y": 340,
+        "wires": [
+            [
+                "sd_4VEepQ7V5CoIY2pS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "savePolicy",
+        "generated": true
+    }
+]

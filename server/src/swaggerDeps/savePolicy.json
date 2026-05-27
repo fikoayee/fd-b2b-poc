@@ -1,0 +1,112 @@
+{
+    "/savePolicy": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "customer_name",
+                    "description": "customer name",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "customer_email",
+                    "description": "customer email",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "customer_phone",
+                    "description": "customer phone",
+                    "required": false
+                },
+                {
+                    "in": "body",
+                    "name": "vehicle_type",
+                    "description": "vehicle type",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "vehicle_model",
+                    "description": "vehicle model",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "is_high_end",
+                    "description": "is high end",
+                    "required": false
+                },
+                {
+                    "in": "body",
+                    "name": "plan_code",
+                    "description": "plan code",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "base_premium",
+                    "description": "base premium",
+                    "required": false
+                },
+                {
+                    "in": "body",
+                    "name": "addon_total",
+                    "description": "addon total",
+                    "required": false
+                },
+                {
+                    "in": "body",
+                    "name": "final_premium",
+                    "description": "final premium",
+                    "required": false
+                },
+                {
+                    "in": "body",
+                    "name": "discount_pct",
+                    "description": "discount pct",
+                    "required": false
+                },
+                {
+                    "in": "body",
+                    "name": "discounted_premium",
+                    "description": "discounted premium",
+                    "required": false
+                },
+                {
+                    "in": "body",
+                    "name": "requires_manual_approval",
+                    "description": "requires manual approval",
+                    "required": false
+                },
+                {
+                    "in": "body",
+                    "name": "underwriter_action",
+                    "description": "underwriter action",
+                    "required": false
+                },
+                {
+                    "in": "body",
+                    "name": "issuer_action",
+                    "description": "issuer action",
+                    "required": false
+                },
+                {
+                    "in": "body",
+                    "name": "status",
+                    "description": "status",
+                    "required": true
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "savePolicy"
+            ]
+        }
+    }
+}
